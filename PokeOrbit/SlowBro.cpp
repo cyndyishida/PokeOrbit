@@ -1,7 +1,7 @@
 /**
  * \file SlowBro.cpp
  *
- * \author Cyndy Ishida , Jenn Proos
+ * \author Cyndy Ishida
  */
 
 

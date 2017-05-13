@@ -1,7 +1,7 @@
 /**
  * \file ItemVisitor.cpp
  *
- * \author Jenn Proos
+ * \author Cyndy Ishida
  */
 
 #include "stdafx.h"

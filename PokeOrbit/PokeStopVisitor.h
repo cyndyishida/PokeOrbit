@@ -1,7 +1,7 @@
 /**
  * \file PokeStopVisitor.h
  *
- * \author Jenn Proos
+ * \author Cyndy Ishida
  *
  * Class that implements a pokestop visitor
  */

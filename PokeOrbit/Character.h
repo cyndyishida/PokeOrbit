@@ -1,7 +1,7 @@
 /**
 * \file Character.h
 *
-* \author Jenn Proos
+* \author Cyndy Ishida
 *
 * Class that implements Ash character
 */

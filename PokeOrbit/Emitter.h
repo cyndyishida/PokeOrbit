@@ -1,7 +1,7 @@
 /**
 * \file Emitter.h
 *
-* \author Jenn Proos
+* \author Cyndy Ishida
 *
 * Class that implements an emission.
 */

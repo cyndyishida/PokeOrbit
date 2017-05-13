@@ -1,7 +1,7 @@
 /**
 * \file PokemonVisitor.h
 *
-* \author Jenn Proos
+* \author Cyndy Ishida
 *
 * Class that implements a Pokemon visitor
 */

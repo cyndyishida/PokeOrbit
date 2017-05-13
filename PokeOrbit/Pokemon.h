@@ -1,7 +1,7 @@
 /**
 * \file Pokemon.h
 *
-* \author Jenn Proos
+* \author Cyndy Ishida
 *
 * Base class for a Pokemon
 */
