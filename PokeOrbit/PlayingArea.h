@@ -95,7 +95,7 @@ public:
 		* \param playingArea the playing area
 		* \param pos Position in collection
 		*/
-		Iter(CPlayingArea *playingArea, int pos) : mPlayingArea(playingArea), mPos(pos) {}
+		Iter(CPlayingArea *playingArea, size_t pos) : mPlayingArea(playingArea), mPos(pos) {}
 
 		/** Test for end of the iterator
 		* \param &other iterator
@@ -119,7 +119,7 @@ public:
 
 	private:
 		CPlayingArea *mPlayingArea;   ///< playingarea we are iterating over
-		int mPos;       ///< Position in the collection
+		size_t mPos;       ///< Position in the collection
 	};
 
 

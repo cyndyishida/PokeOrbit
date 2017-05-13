@@ -145,6 +145,8 @@ void CPlayingArea::AddBall(std::shared_ptr<CPokeBall> gamePiece)
  */
 std::shared_ptr<CGameItem> CPlayingArea::HitTest(int x, int y)
 {
+
+# pragma omp parallel for num_threads(THREADS) shared(x,y) 
 	for (auto i = mGamePieces.rbegin(); i != mGamePieces.rend(); i++)
 	{
 		if ((*i)->HitTest(x, y))
