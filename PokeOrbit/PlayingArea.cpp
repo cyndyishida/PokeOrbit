@@ -205,6 +205,7 @@ void CPlayingArea::Update(double elapsed)
 
 	shared_ptr<CGameItem> expiredStop= nullptr;
 
+	#pragma omp parallel for num_threads(THREADS) shared(mEmitter) 
 	for (auto piece : mGamePieces)
 	{
 		piece->Update(elapsed);
@@ -223,6 +224,8 @@ void CPlayingArea::Update(double elapsed)
 
 	// iterate over balls to 1 check if clicked out, get the balls in right direction & erase
 	
+
+    #pragma omp parallel for num_threads(THREADS)  collapse(2) private(ball, mGamePieces)  
 	for (auto ball : mGameBalls)
 	{
 		ball->Update(elapsed, mVirtualX, mVirtualY);
@@ -284,6 +287,8 @@ bool CPlayingArea::Click(double pointX, double pointY)
 	CPokeStopVisitor visitor(this);
 	Accept(&visitor);
 
+
+    #pragma omp parallel for num_threads(THREADS) shared(visitor, current, mXOffset, mScale, pointX, pointY, mYOffset)
 	for (auto piece : mGamePieces)
 	{
 		if (visitor.GetStopBool() && piece->HitTest((int)((pointX - mXOffset) / mScale),(int)( (pointY - mYOffset) / mScale) ))
@@ -309,6 +314,7 @@ bool CPlayingArea::Click(double pointX, double pointY)
  */
 void CPlayingArea::Accept(CItemVisitor *visitor)
 {
+    #pragma omp parallel for num_threads(THREADS) private( visitor )
 	for (auto piece : mGamePieces)
 	{
 		piece->Accept(visitor);
