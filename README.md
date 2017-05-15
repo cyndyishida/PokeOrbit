@@ -20,3 +20,6 @@ MFC Application Game written in Visual C++ with Multithreading through OpenMP
 
 * After 60 seconds a Pokestop disappears. Pokestops appear less frequently and move slower.
 
+
+## Goals
+- [ ] Test on machine that with more processors, being able to better see the speed up with increasing threads
