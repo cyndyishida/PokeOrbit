@@ -328,6 +328,7 @@ void CPlayingArea::Accept(CItemVisitor *visitor)
  */
 void CPlayingArea::AcceptPokeBalls(CItemVisitor *visitor)
 {
+	#pragma omp parallel for num_threads(THREADS) private( visitor )
 	for (auto piece : mGameBalls)
 	{
 		piece->Accept(visitor);
@@ -456,6 +457,7 @@ void CPlayingArea::SetCoordinates(std::shared_ptr<CPokeBall> pokeball)
 
 	 // iterate over my items if its a pokestop
 	 // and its clicked on, add to the pokemon
+	#pragma omp parallel for num_threads(THREADS) 
 	 for (auto item : mGamePieces)
 	 {
 		 if (item->HitTest((int)((x - mXOffset) / mScale), (int)((y - mYOffset) / mScale)))

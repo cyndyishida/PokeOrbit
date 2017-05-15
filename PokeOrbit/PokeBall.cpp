@@ -17,7 +17,6 @@ using namespace std;
 /// Pokeball image name 
 const wstring PokeballImageName = L"pokeball.png";
 
-
 /**
 * Constructor
 * \param playingArea Playing area this pokeball is a member of

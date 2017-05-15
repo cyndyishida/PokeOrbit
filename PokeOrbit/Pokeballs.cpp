@@ -17,6 +17,11 @@ const signed int YLocation = -500;
 const signed int Incrementer = 75;
 
 
+
+/// number of processors 
+const int THREADS = 4;
+
+
 using namespace Gdiplus;
 using namespace std;
 
@@ -45,6 +50,7 @@ void CPokeballs::AddPokeballs()
 {
 	if (mNumBalls <= 13) 
 	{
+		#pragma omp parallel for num_threads(THREADS) reduction(+ : mNumBalls)
 		for (int i = 0; i < 3; i++)
 		{
 			if (mNumBalls > 13)
@@ -71,7 +77,8 @@ void CPokeballs::RemovePokeballs(std::shared_ptr<CPokeBall> pokeball)
  */
 void CPokeballs::DrawNumBalls(Gdiplus::Graphics  *graphics)
 {
-	for (int i = 0; i < mNumBalls; i++)
+	#pragma omp parallel for num_threads(THREADS)
+ 	for (int i = 0; i < mNumBalls; i++)
 	{
 		auto pokeball = make_shared<CPokeBall>(&mPlayingArea);
 		pokeball->SetLocation(XLocation, YLocation + (i * Incrementer));
