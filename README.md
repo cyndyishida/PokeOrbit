@@ -1,5 +1,5 @@
 # PokeOrbit
-MFC Application Game written in Visual C++ with Multithreading through OpenMP
+MFC Application Game written in Visual C++ with Multithreading through OpenMP, equipted with a testing project
 
 
 ![alt](http://cyndyishida.me/assets/img/projects/pokeorbit.jpg)
@@ -19,6 +19,7 @@ MFC Application Game written in Visual C++ with Multithreading through OpenMP
 * If you click on a Pokestop, you get 3 new Pokeballs. One you click on a Pokestop, it turns purple and you cannot click on it again for 15 seconds, after which it turns blue again and you can again use it. 
 
 * After 60 seconds a Pokestop disappears. Pokestops appear less frequently and move slower.
+
 
 
 ## Goals
