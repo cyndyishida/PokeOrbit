@@ -11,6 +11,9 @@
 #include "PokeBall.h"
 
 
+/// thread count
+const int THREADS = 4;
+
 /**
  * Constructor
  * \param playArea The playing area this item visitor is a member of
@@ -38,7 +41,7 @@ void CPokemonVisitor::VisitPokeball(CPokeBall * pokeball)
 	double xCoordinate = pokeball->GetX();
 	double yCoordinate = pokeball->GetY();
 
-
+	#pragma omp parallel for num_threads(THREADS)
 	for (auto i = CItemVisitor::GetArea()->begin(); i != CItemVisitor::GetArea()->end(); ++i)
 	{
 		if ((*i)->IsPokemon())
